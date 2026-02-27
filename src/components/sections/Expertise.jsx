@@ -1,4 +1,5 @@
 import { Target, Zap, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const expertises = [
     {
@@ -21,14 +22,27 @@ const expertises = [
 export default function Expertise() {
     return (
         <section className="py-16 border-t border-brand-gray">
-            <div className="text-center mb-12">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-12"
+            >
                 <h2 className="text-3xl font-bold mb-4">Core Expertise</h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">Specialized areas where I add the most value to data engineering teams and products.</p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {expertises.map((exp, index) => (
-                    <div key={index} className="flex flex-col items-center text-center p-8 rounded-3xl bg-gradient-to-b from-brand-gray/40 to-transparent border border-gray-800 hover:border-brand-purple/50 transition-all hover:shadow-2xl hover:-translate-y-1">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        key={index}
+                        className="flex flex-col items-center text-center p-8 rounded-3xl bg-gradient-to-b from-brand-gray/40 to-transparent border border-gray-800 hover:border-brand-purple/50 transition-all hover:shadow-2xl hover:-translate-y-1"
+                    >
                         <div className="bg-brand-black p-4 rounded-2xl shadow-lg border border-gray-800 mb-6">
                             {exp.icon}
                         </div>
@@ -36,7 +50,7 @@ export default function Expertise() {
                         <p className="text-gray-400 leading-relaxed text-sm">
                             {exp.description}
                         </p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
