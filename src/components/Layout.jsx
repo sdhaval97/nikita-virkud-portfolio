@@ -4,9 +4,8 @@ import { useState } from 'react';
 
 const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Resources', path: '/resources' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Roadmaps', path: '/roadmaps' },
+    { name: 'Contact', path: '/contact' }
 ];
 
 export default function Layout() {
@@ -31,8 +30,8 @@ export default function Layout() {
                                     key={link.name}
                                     to={link.path}
                                     className={`${location.pathname === link.path
-                                            ? 'text-brand-purple'
-                                            : 'text-gray-300 hover:text-brand-white transition-colors'
+                                        ? 'text-brand-purple'
+                                        : 'text-gray-300 hover:text-brand-white transition-colors'
                                         } font-medium`}
                                 >
                                     {link.name}
@@ -62,8 +61,8 @@ export default function Layout() {
                                     to={link.path}
                                     onClick={() => setIsOpen(false)}
                                     className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === link.path
-                                            ? 'bg-brand-gray text-brand-purple'
-                                            : 'text-gray-300 hover:bg-brand-gray hover:text-white'
+                                        ? 'bg-brand-gray text-brand-purple'
+                                        : 'text-gray-300 hover:bg-brand-gray hover:text-white'
                                         }`}
                                 >
                                     {link.name}
